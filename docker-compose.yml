@@ -5,8 +5,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
-      - "db_data:/var/lib/postgresql/data"
+      - /var/lib/postgresql/data
   repl:
     build: .
     command: lein repl
@@ -17,8 +16,4 @@ services:
       - db
     volumes:
       - .:/todo
-      - "lib_data:/root/.m2/repository"
-
-volumes:
-  db_data:
-  lib_data:
+      - /root/.m2/repository
