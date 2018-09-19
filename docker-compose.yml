@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    build: containers/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
+      - "db_data:/var/lib/postgresql/data"
+  repl:
+    build: .
+    command: lein repl
+    volumes:
+      - .:/todo
+    ports:
+      - "3000:3000"
+      - "39998:39998"
+    depends_on:
+      - db
+    volumes:
+      - "lib_data:/root/.m2/repository"
+
+volumes:
+  db_data:
+  lib_data:
