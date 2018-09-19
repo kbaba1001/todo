@@ -10,14 +10,13 @@ services:
   repl:
     build: .
     command: lein repl
-    volumes:
-      - .:/todo
     ports:
       - "3000:3000"
       - "39998:39998"
     depends_on:
       - db
     volumes:
+      - .:/todo
       - "lib_data:/root/.m2/repository"
 
 volumes:
