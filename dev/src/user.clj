@@ -1,5 +1,6 @@
 (ns user
-  (:require [ragtime.jdbc :as jdbc]
+  (:require [duct.core.env :as e]
+            [ragtime.jdbc :as jdbc]
             [ragtime.repl :as repl]))
 
 (defn dev
@@ -10,7 +11,7 @@
   :loaded)
 
 (defn- migration-config []
-  {:datastore  (jdbc/sql-database {:connection-uri "jdbc:postgresql://db:5432/todo-development?user=postgres&password="})
+  {:datastore  (jdbc/sql-database {:connection-uri (e/env "DEV_DB_URL")})
    :migrations (jdbc/load-resources "migrations")})
 
 (defn migrate []

@@ -2,4 +2,4 @@
  :duct.core/include ["todo/config"]
 
  :duct.module/sql
- {:database-url "jdbc:postgresql://db:5432/todo-development?user=postgres&password="}}
+ {:database-url #duct/env "DEV_DB_URL"}}
