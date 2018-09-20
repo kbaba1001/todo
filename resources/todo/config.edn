@@ -20,13 +20,4 @@
 
  [:duct.handler.sql/insert :todo.handler.articles/create]
  {:request {[_ content] :ataraxy/result}
-  :sql     ["INSERT INTO articles (content) VALUES (?)" content]}
-
- ; migration
- :duct.migrator/ragtime
- {:migrations [#ig/ref :todo.migration/create-articles]}
-
- [:duct.migrator.ragtime/sql :todo.migration/create-articles]
- {:up ["CREATE TABLE articles (id serial NOT NULL PRIMARY KEY,
-                               content text NOT NULL)"]
-  :down ["DROP TABLE articles"]}}
+  :sql     ["INSERT INTO articles (content) VALUES (?)" content]}}
