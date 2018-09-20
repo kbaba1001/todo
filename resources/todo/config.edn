@@ -7,17 +7,7 @@
 
  ; routing
  :duct.module/ataraxy
- {[:get "/"] [:index]
+ {["/articles"] {[:get] [:articles/index]}}
 
-  ["/articles"] {[:get] [:articles/index]
-                 [:post {{:keys [content]} :body-params}] [:articles/create content]}}
-
- [:duct.handler.static/ok :todo.handler/index]
- {:body {:articles "/articles"}}
-
- [:duct.handler.sql/query :todo.handler.articles/index]
- {:sql ["SELECT * FROM articles"]}
-
- [:duct.handler.sql/insert :todo.handler.articles/create]
- {:request {[_ content] :ataraxy/result}
-  :sql     ["INSERT INTO articles (content) VALUES (?)" content]}}
+ :todo.handler.articles/index
+ {:db #ig/ref :duct.database/sql}}
