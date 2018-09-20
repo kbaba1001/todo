@@ -10,12 +10,16 @@
   (in-ns 'dev)
   :loaded)
 
-(defn- migration-config []
-  {:datastore  (jdbc/sql-database {:connection-uri (e/env "DEV_DB_URL")})
+(def migration-db-urls
+  {"dev" (e/env "DEV_DB_URL")
+   "test" (e/env "TEST_DB_URL")})
+
+(defn- migration-config [env]
+  {:datastore  (jdbc/sql-database {:connection-uri (migration-db-urls env)})
    :migrations (jdbc/load-resources "migrations")})
 
-(defn migrate []
-  (repl/migrate (migration-config)))
+(defn migrate [env]
+  (repl/migrate (migration-config env)))
 
-(defn rollback []
-  (repl/rollback (migration-config)))
+(defn rollback [env]
+  (repl/rollback (migration-config env)))

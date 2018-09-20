@@ -20,6 +20,7 @@ services:
       - "lib_data:/root/.m2/repository"
     environment:
       - DEV_DB_URL=jdbc:postgresql://db:5432/todo-development?user=postgres&password=
+      - TEST_DB_URL=jdbc:postgresql://db:5432/todo-test?user=postgres&password=
 
 volumes:
   lib_data:
