@@ -15,6 +15,8 @@
   :main ^:skip-aot todo.main
   :resource-paths ["resources" "target/resources"]
   :prep-tasks     ["javac" "compile" ["run" ":duct/compiler"]]
+  :aliases {"migrate"  ["run" "-m" "user/migrate"]
+            "rollback" ["run" "-m" "user/rollback"]}
   :profiles
   {:dev  [:project/dev :profiles/dev]
    :repl {:prep-tasks   ^:replace ["javac" "compile"]
