@@ -8,7 +8,7 @@
                  [duct/module.logging "0.3.1"]
                  [duct/module.web "0.6.4"]
                  [duct/module.ataraxy "0.2.0"]
-                 [duct/module.sql "0.4.2"]
+                 [duct/database.sql.hikaricp "0.3.3"]
                  [ragtime "0.7.2"]
                  [org.postgresql/postgresql "42.1.4"]]
   :plugins [[duct/lein-duct "0.10.6"]]

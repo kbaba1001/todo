@@ -3,7 +3,7 @@
 
  :duct.module/logging {}
  :duct.module.web/api {}
- :duct.module/sql {}
+ :duct.database.sql/hikaricp {}
 
  ; routing
  :duct.module/ataraxy

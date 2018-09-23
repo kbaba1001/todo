@@ -1,5 +1,5 @@
 {:duct.core/environment :development
  :duct.core/include ["todo/config"]
 
- :duct.module/sql
- {:database-url #duct/env "DEV_DB_URL"}}
+ :duct.database.sql/hikaricp
+ {:jdbc-url #duct/env "DEV_DB_URL"}}
