@@ -1,15 +1,14 @@
 (ns todo.handler.articles
   (:require [ataraxy.response :as response]
             [integrant.core :as ig]
-            [clojure.java.jdbc :as jdbc]))
+            [todo.boundary.articles :as articles]))
 
 (defmethod ig/init-key ::index [_ {:keys [db]}]
   (fn [request]
-    (let [articles (jdbc/query (:spec db) ["SELECT * FROM articles"])]
+    (let [articles (articles/index-articles db)]
       [::response/ok articles])))
 
 (defmethod ig/init-key ::create [_ {:keys [db]}]
   (fn [{:keys [body-params]}]
-    (let [result (jdbc/insert! (:spec db) :articles {:content (:content body-params)})
-          article-id (-> result first :id)]
+    (let [article-id (articles/create-article db body-params)]
       [::response/created (str "/articles/" article-id)])))
