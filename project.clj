@@ -10,7 +10,8 @@
                  [duct/module.ataraxy "0.2.0"]
                  [duct/database.sql.hikaricp "0.3.3"]
                  [ragtime "0.7.2"]
-                 [org.postgresql/postgresql "42.1.4"]]
+                 [org.postgresql/postgresql "42.1.4"]
+                 [com.gearswithingears/shrubbery "0.4.1"]]
   :plugins [[duct/lein-duct "0.10.6"]]
   :main ^:skip-aot todo.main
   :resource-paths ["resources" "target/resources"]
