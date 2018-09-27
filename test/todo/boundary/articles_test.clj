@@ -1,11 +1,10 @@
 (ns todo.boundary.articles-test
-  (:require duct.database.sql
-            [todo.test-utils :as u]
-            [clojure.test :as t]
+  (:require [clojure.test :as t]
             [clojure.java.jdbc :as jdbc]
+            [todo.test-utils :as u]
             [todo.boundary.articles :as articles]))
 
-(t/use-fixtures :once u/db-creanup)
+(t/use-fixtures :each u/db-cleanup)
 
 (t/deftest boundary-artilces-test
   (t/testing "create article"

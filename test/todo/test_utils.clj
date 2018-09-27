@@ -13,6 +13,6 @@
     (doseq [t table-names]
       (jdbc/delete! db-spec t []))))
 
-(defn db-creanup [test-fn]
+(defn db-cleanup [test-fn]
   (test-fn)
   (drop-all-tables))
