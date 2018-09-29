@@ -5,12 +5,20 @@
  :duct.module.web/api {}
  :duct.database.sql/hikaricp {}
 
+ ; buddy
+ :duct.middleware.buddy/authentication
+ {:backend :jws
+  :secret #duct/env "JWT_SECRET"}
+
+ :duct.router/ataraxy
+ {:middleware {:jws-auth #ig/ref :duct.middleware.buddy/authentication}}
+
  ; routing
  :duct.module/ataraxy
  {["/users"] {[:post] [:users/create]
               [:post "/signin"] [:users/signin]}
   ["/articles"] {[:get] [:articles/index]
-                 [:post] [:articles/create]}}
+                 [:post] ^:jws-auth [:articles/create]}}
 
  :todo.handler.articles/index
  {:db #ig/ref :duct.database/sql}
