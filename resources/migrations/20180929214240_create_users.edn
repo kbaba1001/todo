@@ -1,0 +1,4 @@
+{:up ["CREATE TABLE users (id serial NOT NULL PRIMARY KEY,
+                            email varchar(80) NOT NULL UNIQUE,
+                            password_digest varchar(255) NOT NULL)"]
+ :down ["DROP TABLE users"]}
