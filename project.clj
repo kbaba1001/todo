@@ -9,6 +9,7 @@
                  [duct/module.web "0.6.4"]
                  [duct/module.ataraxy "0.2.0"]
                  [duct/database.sql.hikaricp "0.3.3"]
+                 [buddy/buddy-hashers "1.3.0"]
                  [ragtime "0.7.2"]
                  [org.postgresql/postgresql "42.1.4"]]
   :plugins [[duct/lein-duct "0.10.6"]]
