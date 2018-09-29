@@ -1,10 +1,8 @@
 (ns todo.handler.articles-test
-  (:require duct.database.sql
-            [todo.test-utils :as u]
-            [clojure.test :as t]
-            [clojure.java.jdbc :as jdbc]
+  (:require [clojure.test :as t]
             [integrant.core :as ig]
             [shrubbery.core :as shrubbery]
+            [todo.test-utils :as u]
             todo.handler.articles
             [todo.boundary.articles :as articles]))
 
