@@ -11,5 +11,5 @@
 
   (create-user [{:keys [spec]} {:keys [email password]}]
     (let [password-digest (hashers/derive password)
-          result (jdbc/insert! spec :users {:email email :password-digest password-digest})]
+          result (jdbc/insert! spec :users {:email email :password_digest password-digest})]
       (-> result first :id))))
