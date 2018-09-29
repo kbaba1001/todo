@@ -21,6 +21,7 @@ services:
     environment:
       - DEV_DB_URL=jdbc:postgresql://db:5432/todo-development?user=postgres&password=
       - TEST_DB_URL=jdbc:postgresql://db:5432/todo-test?user=postgres&password=
+      - JWT_SECRET=spMLGz5V3srV7a5wkjYWuRR5SpcpuozTBpjUK2J1Mxc6ghyx7Y9sFhxQR4215tmn
 
 volumes:
   lib_data:

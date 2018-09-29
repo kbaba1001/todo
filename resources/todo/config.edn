@@ -22,4 +22,5 @@
  {:db #ig/ref :duct.database/sql}
 
  :todo.handler.users/signin
- {:db #ig/ref :duct.database/sql}}
+ {:db #ig/ref :duct.database/sql
+  :jwt-secret #duct/env "JWT_SECRET"}}
