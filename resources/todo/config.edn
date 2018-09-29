@@ -7,11 +7,19 @@
 
  ; routing
  :duct.module/ataraxy
- {["/articles"] {[:get] [:articles/index]
+ {["/users"] {[:post] [:users/create]
+              [:post "/signin"] [:users/signin]}
+  ["/articles"] {[:get] [:articles/index]
                  [:post] [:articles/create]}}
 
  :todo.handler.articles/index
  {:db #ig/ref :duct.database/sql}
 
  :todo.handler.articles/create
+ {:db #ig/ref :duct.database/sql}
+
+ :todo.handler.users/create
+ {:db #ig/ref :duct.database/sql}
+
+ :todo.handler.users/signin
  {:db #ig/ref :duct.database/sql}}
