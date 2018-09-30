@@ -12,6 +12,7 @@
                  [buddy/buddy-hashers "1.3.0"]
                  [duct/middleware.buddy "0.1.0"]
                  [ragtime "0.7.2"]
+                 [funcool/struct "1.3.0"]
                  [org.postgresql/postgresql "42.1.4"]]
   :plugins [[duct/lein-duct "0.10.6"]]
   :main ^:skip-aot todo.main
