@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "askForPassword": false,
+      "connectionTimeout": 30,
+      "database": "todo-development",
+      "dialect": "PostgreSQL",
+      "name": "todo",
+      "port": 5432,
+      "server": "db",
+      "username": "postgres"
+    }
+  ]
+}

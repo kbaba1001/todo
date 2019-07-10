@@ -1,0 +1,6 @@
+version: "3"
+services:
+  repl:
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig
+    command: sleep infinity
