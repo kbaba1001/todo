@@ -1,21 +1,21 @@
 {
-	"name": "todo",
+  "name": "todo",
   "dockerComposeFile": [
     "../docker-compose.yml",
     "docker-compose.extend.yml"
   ],
   "service": "repl",
   "workspaceFolder": "/todo",
-	"extensions": [
-		"betterthantomorrow.calva",
-		"tonsky.clojure-warrior",
+  "extensions": [
+    "betterthantomorrow.calva",
+    "tonsky.clojure-warrior",
     "mtxr.sqltools"
-	],
-	"settings":{
-		"calva.jokerPath": "/usr/bin",
+  ],
+  "settings":{
+    "calva.jokerPath": "/usr/bin",
     "editor.tabSize": 2,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "terminal.integrated.shell.linux": "/bin/bash"
-	}
+  }
 }
